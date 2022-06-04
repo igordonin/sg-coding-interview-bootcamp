@@ -25,3 +25,16 @@ test('"A tree, a life, a bench" is not an anagram of "A tree, a fence, a yard"',
     anagrams('A tree, a life, a bench', 'A tree, a fence, a yard')
   ).toBeFalsy();
 });
+
+test('more tests', () => {
+  expect(anagrams('Mother-in-law', 'Hitler woman')).toBeTruthy();
+  expect(anagrams('Debit card', 'Bad credit')).toBeTruthy();
+  expect(anagrams('Dormitory', 'Dirty room')).toBeTruthy();
+  expect(anagrams('School master', 'The classroom')).toBeTruthy();
+});
+
+test('same letters but not exactly same amount for each of them', () => {
+  expect(anagrams('The earthquakes', 'The queer shakes')).toBeTruthy();
+  expect(anagrams('Astronomer', 'Moon starrer')).toBeTruthy();
+  expect(anagrams('Punishments', 'Nine thumps')).toBeTruthy();
+});

@@ -13,7 +13,45 @@
 //       '  #  '
 //       ' ### '
 //       '#####'
+//   pyramid(4)
+//       '   #   '
+//       '  ###  '
+//       ' ##### '
+//       '#######'
 
-function pyramid(n) {}
+function pyramid(n) {
+  let maxBlocksOnEachSide = n - 1;
+
+  for (let i = 0; i < n; i++) {
+    const level = Array(1 + 2 * i)
+      .fill("#")
+      .join("");
+
+    console.log(
+      level
+        .padStart(level.length + maxBlocksOnEachSide, " ")
+        .padEnd(level.length + (maxBlocksOnEachSide * 2), " ")
+    );
+    maxBlocksOnEachSide--;
+  }
+}
+
+
+function myFirstSolution(n) {
+    let maxBlocksOnEachSide = n - 1;
+  
+    for (let i = 0; i < n; i++) {
+      const level = Array(1 + 2 * i)
+        .fill("#")
+        .join("");
+  
+      console.log(
+        level
+          .padStart(level.length + maxBlocksOnEachSide, " ")
+          .padEnd(level.length + (maxBlocksOnEachSide * 2), " ")
+      );
+      maxBlocksOnEachSide--;
+    }
+  }
 
 module.exports = pyramid;
